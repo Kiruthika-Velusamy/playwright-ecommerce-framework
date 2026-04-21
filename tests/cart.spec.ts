@@ -14,7 +14,6 @@ test('add multiple item to cart verifies cart badge', async ({ page }) => {
     await page.getByPlaceholder("Username").fill('standard_user');
     await page.getByPlaceholder("Password").fill('secret_sauce');
     await page.getByRole('button', { name: 'Login' }).click();
-    page.pause();
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
     const addButtons = page.getByRole('button', { name: 'Add to cart' });
     await addButtons.nth(0).click();
