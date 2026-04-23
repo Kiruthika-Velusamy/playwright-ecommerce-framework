@@ -1,25 +1,29 @@
-import { test, expect } from '@playwright/test'
-test('valid login navigates to inventory page', async ({ page }) => {
-    await page.goto('https://www.saucedemo.com');
-    await page.getByPlaceholder("Username").fill('standard_user');
-    await page.getByPlaceholder("Password").fill('secret_sauce');
-    await page.getByRole('button', { name: 'Login' }).click();
-    await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+import { test, expect} from '@playwright/test'
+import { LoginPage } from '../pages/LoginPage'
 
-});
-test('invalid login shows error message', async ({ page }) => {
-    await page.goto('https://www.saucedemo.com');
-    await page.getByPlaceholder("Username").fill('error_user1');
-    await page.getByPlaceholder("Password").fill('secret_sauce');
-    await page.getByRole('button', { name: 'Login' }).click();
-    await expect(page.getByText('Username and password do not match any user in this service')).toBeVisible();
 
-});
-test('locked out user shows error message', async ({ page }) => {
-    await page.goto('https://www.saucedemo.com');
-    await page.getByPlaceholder("Username").fill('locked_out_user');
-    await page.getByPlaceholder("Password").fill('secret_sauce');
-    await page.getByRole('button', { name: 'Login' }).click();
-    await expect(page.getByText('Sorry, this user has been locked out.')).toBeVisible();
+test.describe('Login functionality', () => {
+    let loginPage: LoginPage;
+   
+    test.beforeEach(async ({ page }) => {
+         page.pause();
+        loginPage = new LoginPage(page);
+        await loginPage.goto();
+    })
+    test('valid login navigates to inventory page', async ({ page }) => {
+        await loginPage.login('standard_user', 'secret_sauce');
+        await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+    });
+
+    test('invalid login shows error message', async ({ }) => {
+        await loginPage.login('error_user1', 'secret_sauce');
+        await loginPage.invalidUser('Username and password do not match any user in this service');
+    });
+
+    test('locked out user shows error message', async ({ }) => {
+        await loginPage.login('locked_out_user', 'secret_sauce');
+        await loginPage.lockedUser('Sorry, this user has been locked out.');
+
+    });
 
 });
