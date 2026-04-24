@@ -1,13 +1,12 @@
 import { Page, Locator, expect } from '@playwright/test'
-
-export class InventoryPage {
-    readonly page: Page;
+import { BasePage } from './BasePage';
+export class InventoryPage extends BasePage {
     readonly sort: Locator;
     readonly allItemPrice: Locator;
     readonly allItemName: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page)
         this.sort = page.getByRole('combobox');
         this.allItemPrice = page.locator('.inventory_item_price')
         this.allItemName = page.locator('.inventory_item_name')
