@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "End-to-end test automation framework for e-commerce applications built with Playwright and TypeScript.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:login": "cucumber-js features/**/*.feature --require-module ts-node/register --require ./step-definitions/**/*.ts --require ./support/**/*.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kiruthika-Velusamy/playwright-ecommerce-framework.git"
@@ -19,6 +21,12 @@
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "@types/node": "^25.6.0",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^12.8.1",
+    "@cucumber/pretty-formatter": "^3.2.0",
+    "ts-node": "^10.9.2"
   }
 }
