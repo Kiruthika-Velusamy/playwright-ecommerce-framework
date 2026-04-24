@@ -1,8 +1,6 @@
-import { test, expect } from '@playwright/test'
+import { test } from '@playwright/test'
 import { LoginPage } from '../pages/LoginPage';
 import { CartPage } from '../pages/CartPage';
-
-
 
 test.describe('Cart functionality', () => {
     let cartPage: CartPage;
@@ -14,17 +12,17 @@ test.describe('Cart functionality', () => {
         await loginPage.login('standard_user', 'secret_sauce');
     })
     test('add single item to cart verifies cart badge', async ({ }) => {
-        await cartPage.addSingleItem(1);
+        await cartPage.addItemsToCart(1);
 
     })
-    test('add multiple item to cart verifies cart badge', async ({  }) => {
-        await cartPage.addMultipleItem(3);
+    test('add multiple item to cart verifies cart badge', async ({ }) => {
+        await cartPage.addItemsToCart(3);
 
     })
 
     test('remove item from cart verifies cart updates', async ({ page }) => {
         await cartPage.removeItemInCart(1);
-        
+
     })
 
 })
