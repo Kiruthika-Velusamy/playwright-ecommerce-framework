@@ -15,12 +15,12 @@ test.describe('Login functionality', () => {
         await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
     });
 
-    test('invalid login shows error message', async ({ }) => {
+    test('invalid login shows error message', async () => {
         await loginPage.login(users.invalidUser.username, users.validUser.password);
         await loginPage.invalidUser('Username and password do not match any user in this service');
     });
 
-    test('locked out user shows error message', async ({ }) => {
+    test('locked out user shows error message', async () => {
         await loginPage.login(users.lockedUser.username, users.validUser.password);
         await loginPage.lockedUser('Sorry, this user has been locked out.');
 
