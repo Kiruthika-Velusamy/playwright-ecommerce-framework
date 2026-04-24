@@ -1,6 +1,6 @@
 import { Page, Locator, expect } from '@playwright/test'
-export class CheckoutPage {
-    readonly page: Page;
+import { BasePage } from './BasePage';
+export class CheckoutPage extends BasePage {
     readonly addToCart: Locator;
     readonly shoppingCartLink: Locator;
     readonly checkoutButton: Locator;
@@ -15,7 +15,7 @@ export class CheckoutPage {
     readonly loginButton: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.addToCart = page.getByRole('button', { name: 'Add to cart' }).first();
         this.shoppingCartLink = page.locator('.shopping_cart_link');
         this.checkoutButton = page.getByRole('button', { name: 'Checkout' });
