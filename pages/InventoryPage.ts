@@ -14,6 +14,9 @@ export class InventoryPage extends BasePage {
 
     async sortByPrice(price: string) {
         await this.sort.selectOption(price);
+    }
+
+    async verifyPriceSortedLowToHigh() {
         const prices = await this.allItemPrice.allTextContents();
         const numbers = prices.map(p => parseFloat(p.replace('$', '')))
         for (let i = 0; i < numbers.length - 1; i++) {
@@ -23,9 +26,14 @@ export class InventoryPage extends BasePage {
 
     async sortByName(name: string) {
         await this.sort.selectOption(name);
+
+    }
+
+    async verifyNameSortedZtoA() {
         const names = await this.allItemName.allTextContents();
         const sorted = [...names].sort().reverse();
         expect(names).toEqual(sorted);
     }
+
 
 }

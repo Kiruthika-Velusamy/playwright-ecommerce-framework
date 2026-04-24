@@ -4,7 +4,8 @@
   "description": "End-to-end test automation framework for e-commerce applications built with Playwright and TypeScript.",
   "main": "index.js",
   "scripts": {
-    "test:login": "cucumber-js features/**/*.feature --require-module ts-node/register --require ./step-definitions/**/*.ts --require ./support/**/*.ts"
+    "test:login": "cucumber-js features/**/login.feature --require-module ts-node/register --require ./step-definitions/**/loginSteps.ts --require ./support/**/*.ts",
+    "test:inventory": "cucumber-js features/**/inventory.feature --require-module ts-node/register --require ./step-definitions/**/inventorySteps.ts --require ./support/**/*.ts"
   },
   "repository": {
     "type": "git",
