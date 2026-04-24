@@ -1,13 +1,13 @@
 import { Page, Locator, expect } from '@playwright/test'
+import { BasePage } from './BasePage';
 
-export class LoginPage {
-    readonly page: Page;
+export class LoginPage extends BasePage {
     readonly userName: Locator;
     readonly Password: Locator;
     readonly loginButton: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.userName = page.getByPlaceholder("Username");
         this.Password = page.getByPlaceholder("Password");
         this.loginButton = page.getByRole('button', { name: 'Login' });
@@ -15,6 +15,7 @@ export class LoginPage {
 
     async goto() {
         await this.page.goto('https://www.saucedemo.com');
+    
     }
     async login(username: string, password: string) {
         await this.userName.fill(username);
