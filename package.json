@@ -8,7 +8,6 @@
     "test:inventory": "cucumber-js features/**/inventory.feature --require-module ts-node/register --require ./step-definitions/**/inventorySteps.ts --require ./support/**/*.ts",
     "test:cart": "cucumber-js features/**/cart.feature --require-module ts-node/register --require ./step-definitions/**/cartSteps.ts --require ./support/**/*.ts",
     "test:checkout": "cucumber-js features/**/checkout.feature --require-module ts-node/register --require ./step-definitions/**/checkoutSteps.ts --require ./support/**/*.ts"
-  
   },
   "repository": {
     "type": "git",
@@ -31,6 +30,7 @@
   "dependencies": {
     "@cucumber/cucumber": "^12.8.1",
     "@cucumber/pretty-formatter": "^3.2.0",
+    "csv-parse": "^6.2.1",
     "ts-node": "^10.9.2"
   }
 }

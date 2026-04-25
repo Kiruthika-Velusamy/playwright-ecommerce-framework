@@ -1,0 +1,4 @@
+username,password,shouldSucceed,expectedresult
+standard_user,secret_sauce,true,https://www.saucedemo.com/inventory.html
+error_user1,secret_sauce,false,Username and password do not match
+locked_out_user,secret_sauce,false,"Sorry, this user has been locked out"
