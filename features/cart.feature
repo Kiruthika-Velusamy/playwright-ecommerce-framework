@@ -4,6 +4,7 @@ I want to add/remove items to Cart
 So that I can buy products
 
 Scenario Outline: Login with valid credentials
+Given I am on the login page
 When I login with username "<username>" and password "<password>"
 Then I should see the inventory page
 Examples:

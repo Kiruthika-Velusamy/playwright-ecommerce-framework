@@ -31,8 +31,11 @@ export class CheckoutPage extends BasePage {
 
     }
 
-    async placeOrder(firstname: string, lastname: string, zipcode: string, thanksmessage: string) {
+    async addItemtoCart() {
         await this.addToCart.click();
+    }
+
+    async placeOrder(firstname: string, lastname: string, zipcode: string, thanksmessage: string) {
         await this.shoppingCartLink.click();
         await this.checkoutButton.click();
         await this.firstName.fill(firstname);
@@ -43,12 +46,14 @@ export class CheckoutPage extends BasePage {
         await expect(this.thanksForOrder).toHaveText(thanksmessage);
     }
 
-    async logout(url: string) {
+    async logout() {
         await this.openMenu.click();
         await this.logoutLink.click();
+    }
+
+    async verifyLogout(url: string) {
         await expect(this.page).toHaveURL(url);
         await expect(this.loginButton).toBeVisible();
-
     }
 }
 

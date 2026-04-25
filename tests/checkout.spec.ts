@@ -18,12 +18,14 @@ test.describe('Checkout functionality', () => {
     test('add single item to cart verifies cart badge', async ({ page }) => {
         await loginPage.login(users.validUser.username, users.validUser.password);
         await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+        await checkoutPage.addItemtoCart();
         await checkoutPage.placeOrder('standard', 'user', 'RH118PL', 'Thank you for your order!');
     })
     test('logout clears session and redirects to login', async ({ page }) => {
         await loginPage.login(users.validUser.username, users.validUser.password);
         await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
-        await checkoutPage.logout('https://www.saucedemo.com/');
+        await checkoutPage.logout();
+        await checkoutPage.verifyLogout('https://www.saucedemo.com/');
 
     })
 
