@@ -14,6 +14,5 @@ End-to-end test automation framework for e-commerce applications built with Play
 | Reporting | HTML + JSON |
 | Version Control | Git + GitHub |
 
-## Project Status
-In Progress - Building standalone tests (Week 1)
+
 
