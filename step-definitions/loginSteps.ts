@@ -10,7 +10,6 @@ Given('I am on the login page', async function (this: CustomWorld) {
 
 When('I login with username {string} and password {string}', async function (this: CustomWorld, username: string, password: string) {
     await this.loginPage.login(username, password);
-   
 
 })
 
@@ -26,3 +25,11 @@ Then('I should get user has been locked out error message', async function (this
     await this.loginPage.lockedUser('Sorry, this user has been locked out.');
 })
 
+Then('I should see {string}', async function (this: CustomWorld,expectedresult:string) {
+    if (expectedresult.startsWith('https')) {
+        await expect(this.page).toHaveURL('https://www.saucedemo.com/inventory.html');
+    }
+    else {
+        await expect(this.page.getByText(expectedresult)).toBeVisible();
+    }
+})  
