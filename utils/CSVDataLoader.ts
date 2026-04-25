@@ -16,7 +16,7 @@ export class CSVDataLoader {
     )
     const content = fs.readFileSync(filePath, 'utf-8')
     return parse(content, {
-      columns: true,      // use first row as headers
+      columns: true,     
       skip_empty_lines: true
     })
   }
