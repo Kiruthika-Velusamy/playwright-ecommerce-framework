@@ -16,10 +16,12 @@ test.describe('Inventory functionality', () => {
 
     test('sort products by price low to high', async () => {
         await inventoryPage.sortByPrice('Price (low to high)');
+        await inventoryPage.verifyPriceSortedLowToHigh();
     })
 
     test('sort products by name Z to A', async () => {
         await inventoryPage.sortByName('Name (Z to A)');
+        await inventoryPage.verifyNameSortedZtoA();
     })
 
 })
