@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:login": "cucumber-js features/**/login.feature --require-module ts-node/register --require ./step-definitions/**/loginSteps.ts --require ./support/**/*.ts",
-    "test:inventory": "cucumber-js features/**/inventory.feature --require-module ts-node/register --require ./step-definitions/**/inventorySteps.ts --require ./support/**/*.ts"
+    "test:inventory": "cucumber-js features/**/inventory.feature --require-module ts-node/register --require ./step-definitions/**/inventorySteps.ts --require ./support/**/*.ts",
+    "test:cart": "cucumber-js features/**/cart.feature --require-module ts-node/register --require ./step-definitions/**/cartSteps.ts --require ./support/**/*.ts"
   },
   "repository": {
     "type": "git",
