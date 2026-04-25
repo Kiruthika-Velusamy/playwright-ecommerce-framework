@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 5
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -79,108 +79,6 @@
           "column": 6,
           "specs": [
             {
-              "title": "empty username shows error",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 691,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-25T17:03:37.744Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e69c79ad8f3852f6da2b-f64571abd6a76a5368b8",
-              "file": "edge-cases/login.edge.spec.ts",
-              "line": 10,
-              "column": 9
-            },
-            {
-              "title": "empty password shows error",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 651,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-25T17:03:37.750Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e69c79ad8f3852f6da2b-2c640cbf981b9f620937",
-              "file": "edge-cases/login.edge.spec.ts",
-              "line": 15,
-              "column": 9
-            },
-            {
-              "title": "empty username and password shows error",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 637,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-25T17:03:37.750Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e69c79ad8f3852f6da2b-fa9665cfe5a28d690287",
-              "file": "edge-cases/login.edge.spec.ts",
-              "line": 20,
-              "column": 9
-            },
-            {
               "title": "long user name does not crash",
               "ok": true,
               "tags": [],
@@ -193,17 +91,23 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 652,
+                      "duration": 609,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-25T17:03:37.739Z",
+                      "startTime": "2026-04-25T17:18:07.438Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/kiruthikavelusamy/Documents/playwright-ecommerce-framework/test-results/edge-cases-login.edge-Logi-a0611-ng-user-name-does-not-crash-chromium/trace.zip"
+                        }
+                      ]
                     }
                   ],
                   "status": "expected"
@@ -213,74 +117,6 @@
               "file": "edge-cases/login.edge.spec.ts",
               "line": 25,
               "column": 9
-            },
-            {
-              "title": "SQL injection attempt in username",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 699,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-25T17:03:37.732Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e69c79ad8f3852f6da2b-671943f0771434069ad0",
-              "file": "edge-cases/login.edge.spec.ts",
-              "line": 31,
-              "column": 9
-            },
-            {
-              "title": "XSS attempt in username",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 372,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-25T17:03:38.523Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e69c79ad8f3852f6da2b-b25d9917574e4e8f1681",
-              "file": "edge-cases/login.edge.spec.ts",
-              "line": 38,
-              "column": 7
             }
           ]
         }
@@ -289,9 +125,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-25T17:03:37.444Z",
-    "duration": 1478.692,
-    "expected": 6,
+    "startTime": "2026-04-25T17:18:07.036Z",
+    "duration": 1103.5139999999665,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
