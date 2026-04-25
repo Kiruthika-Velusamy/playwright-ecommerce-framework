@@ -1,4 +1,5 @@
 # Playwright E-Commerce Test Automation Framework
+![Tests](https://github.com/Kiruthika-Velusamy/playwright-ecommerce-framework/actions/workflows/playwright.yml/badge.svg)
 
 End-to-end test automation framework for e-commerce applications built with Playwright and TypeScript.
 
@@ -12,6 +13,7 @@ End-to-end test automation framework for e-commerce applications built with Play
 | Test Data | JSON files |
 | Reporting | HTML + JSON |
 | Version Control | Git + GitHub |
+
 
 
 ## CI/CD Pipeline
