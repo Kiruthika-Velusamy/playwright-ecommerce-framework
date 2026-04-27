@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "chromium",
         "name": "chromium",
@@ -66,20 +66,54 @@
   },
   "suites": [
     {
-      "title": "edge-cases/login.edge.spec.ts",
-      "file": "edge-cases/login.edge.spec.ts",
+      "title": "login.spec.ts",
+      "file": "login.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Login edge cases",
-          "file": "edge-cases/login.edge.spec.ts",
-          "line": 3,
+          "title": "Login functionality",
+          "file": "login.spec.ts",
+          "line": 5,
           "column": 6,
           "specs": [
             {
-              "title": "long user name does not crash",
+              "title": "valid login navigates to inventory page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2507,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-27T09:22:03.598Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41d3fd2474a19feb00a1-d66c727321008d5e81e6",
+              "file": "login.spec.ts",
+              "line": 12,
+              "column": 9
+            },
+            {
+              "title": "invalid login shows error message",
               "ok": true,
               "tags": [],
               "tests": [
@@ -92,30 +126,58 @@
                   "results": [
                     {
                       "workerIndex": 1,
-                      "parallelIndex": 0,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 609,
+                      "duration": 2474,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-25T17:18:07.438Z",
+                      "startTime": "2026-04-27T09:22:03.594Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/kiruthikavelusamy/Documents/playwright-ecommerce-framework/test-results/edge-cases-login.edge-Logi-a0611-ng-user-name-does-not-crash-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "e69c79ad8f3852f6da2b-39a9354870b1c2f307bb",
-              "file": "edge-cases/login.edge.spec.ts",
-              "line": 25,
+              "id": "41d3fd2474a19feb00a1-a36489e005be20d1307e",
+              "file": "login.spec.ts",
+              "line": 18,
+              "column": 9
+            },
+            {
+              "title": "locked out user shows error message",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2472,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-27T09:22:03.593Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41d3fd2474a19feb00a1-abe3bec182bb9e44a537",
+              "file": "login.spec.ts",
+              "line": 23,
               "column": 9
             }
           ]
@@ -125,9 +187,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-25T17:18:07.036Z",
-    "duration": 1103.5139999999665,
-    "expected": 1,
+    "startTime": "2026-04-27T09:22:03.363Z",
+    "duration": 2968.1800000000003,
+    "expected": 3,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

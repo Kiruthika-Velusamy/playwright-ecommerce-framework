@@ -1,7 +1,14 @@
 # Playwright E-Commerce Test Automation Framework
+
 ![Tests](https://github.com/Kiruthika-Velusamy/playwright-ecommerce-framework/actions/workflows/playwright.yml/badge.svg)
 
-End-to-end test automation framework for e-commerce applications built with Playwright and TypeScript.
+
+## About
+
+End-to-end test automation framework for an e-commerce 
+application built with Playwright and TypeScript. 
+Covers UI automation, BDD, data-driven testing, 
+security testing, CI/CD and Docker containerisation.
 
 ## Tech Stack
 | Category | Technology |
@@ -14,6 +21,32 @@ End-to-end test automation framework for e-commerce applications built with Play
 | Reporting | HTML + JSON |
 | Version Control | Git + GitHub |
 
+
+## How to Run
+
+### Locally
+# Install dependencies
+npm install
+npx playwright install
+
+# Run all tests
+npx playwright test
+
+# Run with browser visible
+npx playwright test --headed
+
+# View HTML report
+npx playwright show-report reports/html
+
+### BDD Cucumber Tests
+npm run test:login
+npm run test:inventory
+npm run test:cart
+npm run test:checkout
+
+### In Docker
+# Build and run all tests in container
+docker compose up --build
 
 
 ## CI/CD Pipeline
@@ -31,3 +64,9 @@ Pipeline steps:
 
 Branch protection enabled — tests must pass before 
 any merge to main is allowed.
+
+
+## Author
+
+Kiruthika Velusamy | QA Automation Engineer
+[GitHub](https://github.com/Kiruthika-Velusamy)
