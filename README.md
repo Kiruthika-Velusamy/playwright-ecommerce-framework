@@ -3,14 +3,14 @@
 ![Tests](https://github.com/Kiruthika-Velusamy/playwright-ecommerce-framework/actions/workflows/playwright.yml/badge.svg)
 
 
-### About
+# About
 
 End-to-end test automation framework for an e-commerce 
 application built with Playwright and TypeScript. 
 Covers UI automation, BDD, data-driven testing, 
 security testing, CI/CD and Docker containerisation.
 
-### Tech Stack
+##Tech Stack
 | Category | Technology |
 |----------|-----------|
 | Test Framework | Playwright |
@@ -22,20 +22,20 @@ security testing, CI/CD and Docker containerisation.
 | Version Control | Git + GitHub |
 
 
-### How to Run
+# How to Run
 
 ## Locally
-# Install dependencies
+### Install dependencies
 npm install
 npx playwright install
 
-# Run all tests
+### Run all tests
 npx playwright test
 
-# Run with browser visible
+### Run with browser visible
 npx playwright test --headed
 
-# View HTML report
+### View HTML report
 npx playwright show-report reports/html
 
 ## BDD Cucumber Tests
@@ -45,11 +45,11 @@ npm run test:cart
 npm run test:checkout
 
 ## In Docker
-# Build and run all tests in container
+### Build and run all tests in container
 docker compose up --build
 
 
-### CI/CD Pipeline
+# CI/CD Pipeline
 
 Tests run automatically on every push and pull request to main.
 
