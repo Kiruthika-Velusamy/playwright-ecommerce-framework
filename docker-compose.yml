@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  playwright-tests:
+    build: .           # build from Dockerfile in current folder
+    volumes:
+      - ./reports:/app/reports           # share reports folder
+      - ./test-results:/app/test-results # share test results
+    environment:
+      - CI=true        # tells Playwright it's running in CI
