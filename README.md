@@ -45,7 +45,7 @@ npm run test:cart
 npm run test:checkout
 
 ## In Docker
-### Build and run all tests in container
+#### Build and run all tests in container
 docker compose up --build
 
 
